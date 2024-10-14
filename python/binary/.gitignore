@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+.mypy_cache
+.pytest_cache
+.vscode
+env
+stressor_output.txt
+/dist
+/build
+/*.spec

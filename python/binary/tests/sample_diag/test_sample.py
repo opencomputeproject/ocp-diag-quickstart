@@ -1,4 +1,4 @@
-from sample import sample
+from sample_diag import sample
 
 
 def test_compute():

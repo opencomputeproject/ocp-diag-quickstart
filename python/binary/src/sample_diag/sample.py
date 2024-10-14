@@ -4,6 +4,7 @@ import socket
 import sys
 import time
 
+import sample_diag
 import ocptv.output as tv
 
 # Path to binary that will be used to stress the system
@@ -94,7 +95,7 @@ def get_system_state() -> dict:
 
 
 def main():
-    run = tv.TestRun(name="HelloWorld", version="1.0", parameters={})
+    run = tv.TestRun(name="HelloWorld", version=sample_diag.__version__, parameters={})
     with run.scope(dut=tv.Dut(id=socket.gethostname())):
         if not get_system_state().get("temperature"):
             run.add_error(symptom="no-temperature", message="Temperature cannot be retrived")

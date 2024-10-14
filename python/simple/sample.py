@@ -109,13 +109,16 @@ def main():
             raise tv.TestRunError(
                 status=tv.TestStatus.SKIP, result=tv.TestResult.NOT_APPLICABLE
             )
+
         run.add_log(
             severity=tv.LogSeverity.INFO,
             message="We are starting the Hello World diagnostic",
         )
+
         stepA = run.add_step("Run binary")
         with stepA.scope():
             stress_system_with_binary(stepA)
+
         stepB = run.add_step("Stress system without an external binary")
         with stepB.scope():
             stress_system_without_binary(stepB)
