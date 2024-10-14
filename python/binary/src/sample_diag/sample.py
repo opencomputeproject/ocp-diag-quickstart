@@ -53,7 +53,7 @@ def stress_system_without_binary(step: tv.TestStep) -> None:
     # Add some custom structured data relevant to your company
     step.add_extension(
         name="mycompany-master_test_plan",
-        content="test_42",
+        content={"type": "test_42"},
     )
 
     step.add_diagnosis(diagnosis_type=tv.DiagnosisType.PASS, verdict="no-binary-pass")
