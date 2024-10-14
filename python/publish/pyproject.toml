@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sample_diag"
+version = "0.1.0"
+description = "OCP Test & Validation sample diag"
+readme = "README.md"
+classifiers = ["Programming Language :: Python", "Topic :: System :: Hardware"]
+keywords = ["ocp", "ocptv", "sample"]
+dependencies = ["ocptv ~= 0.1"]
+requires-python = ">=3.7"
+
+[project.optional-dependencies]
+dev = ["black", "bumpver", "isort", "pytest", "mypy", "build", "twine"]
+
+[project.scripts]
+sample_diag = "sample.sample:main"
+
+[tool.bumpver]
+current_version = "0.1.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = false
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+"src/sample/__init__.py" = ["{version}"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"

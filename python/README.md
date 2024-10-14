@@ -1,21 +1,7 @@
-# python sample
+# Python quickstart samples
 
-\<Fill in your own readme here after copying this sample codebase>.
+This folder contains various starter codebases for new OCPTV diagnostic packages. The subfolders are meant to be copied and adapted. See the [spec](https://github.com/opencomputeproject/ocp-diag-core/tree/main/json_spec) for details about the output format, and the [python api](https://github.com/opencomputeproject/ocp-diag-core-python) and [api examples](https://github.com/opencomputeproject/ocp-diag-core-python/tree/dev/examples).
 
-This sample diagnostic contains all message types in [OCP Test & Validation output](https://github.com/opencomputeproject/ocp-diag-core/blob/main/json_spec/README.md) and uses the Python [ocptv library](https://github.com/opencomputeproject/ocp-diag-core-python).
-
-### Usage
-
-**Note** This sample assumes the user has a python interpreter available.
-
-```bash
-# [optional] create a venv
-$ python -m venv env
-$ source ./env/bin/activate
-
-# install deps
-$ pip install -r requirements.txt
-
-# run
-$ python sample.py
-```
+### Samples:
+- [**simple**](./simple/) is a single script package. If your diag only requires some dependencies and can be written within a single file, then this is a good sample to start from.
+- [**publish**](./publish/) is a multi-script [pyproject.toml](https://packaging.python.org/en/latest/specifications/pyproject-toml/) based source, which is meant to be used as a PyPI package. More details about usage in its own [README.md](./publish/README.md).

@@ -1,0 +1,8 @@
+ocptv ~= 0.1
+black ~= 24.10
+pytest ~= 8.3
+mypy ~= 1.11
+isort ~= 5.13
+bumpver ~= 2023.1129
+build ~= 1.2.2
+twine ~= 5.1
